@@ -19,13 +19,6 @@ public class HeaderPage {
     }
 
     @FindBy(xpath = "/html/body/header/div/div/div[1]/div[2]/nav/ul/li[1]/ul/li[2]")
-    public WebElement gedisHaqqiTarifleri;
-
-    public void setGedisHaqqiLink(){
-        gedisHaqqi.click();
-    }
-
-    @FindBy(xpath = "/html/body/header/div/div/div[1]/div[2]/nav/ul/li[1]/ul/li[2]")
     private WebElement gedisHaqqi;
 
     public void gedisHaqqiLink() {
