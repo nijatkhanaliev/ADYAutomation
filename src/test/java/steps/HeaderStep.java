@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.HeaderPage;
@@ -26,7 +27,7 @@ public class HeaderStep {
         driver.get("https://ticket.ady.az/");
     }
 
-    @And("the user clicks on the first  header message")
+    @And("the user clicks on the first header message")
     public void the_user_clicks_on_the_first_header_message(){
         headerPage.tarifOdenisHeader();
         headerPage.gedisHaqqiLink();
@@ -40,7 +41,7 @@ public class HeaderStep {
         headerPage.elektronBiletLink();
     }
 
-    @When("the user clicks on the second  header message")
+    @When("the user clicks on the second header message")
     public void the_user_clicks_on_the_second_header_message() {
         headerPage.sernisinSInifleriLink();
         headerPage.birinciSinifLink();
@@ -64,8 +65,8 @@ public class HeaderStep {
 
     @Then("the corresponding page should open successfully")
     public void the_corresponding_page_should_open_successfully() {
-       assert  headerPage.getMainTitleFromHeyvanlarinDasinmasi()
-               .equals("Heyvanların daşınması");
+        Assert.assertEquals("Heyvanların daşınması",
+                headerPage.getMainTitleFromHeyvanlarinDasinmasi());
     }
 
 }
